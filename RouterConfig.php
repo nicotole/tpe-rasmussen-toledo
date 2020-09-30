@@ -10,7 +10,7 @@
 
     // rutas
     $r->addRoute("home", "GET", "peliculasController", "Home");//el primer parametro es lo que tipeas en URL, la ultima es la funcion que llamas en "peliculasController"
-    // $r->addRoute("mermelada", "GET", "TasksController", "Home");//URL; METODO; clase; funcion a usar de la clase
+    $r->addRoute("generos", "GET", "peliculasController", "Generos");//URL; METODO; clase; funcion a usar de la clase
 
     // //Esto lo veo en TasksView
     // $r->addRoute("insert", "POST", "TasksController", "InsertTask");

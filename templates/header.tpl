@@ -19,8 +19,9 @@
         
         <nav>
             <ul class="navigation">
-                <li id="inicio"> Inicio </li>
-                <li id="categorias"> Categorias </li>
-                <li id="registrarse"> Registrarse </li>
+                <li> <a href="home"> Inicio </a> </li>
+                <li> <a href="generos"> Generos </a> </li>
+                <li> Registrarse </li>
             </ul>
         </nav>
+        

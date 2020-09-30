@@ -14,8 +14,15 @@ class peliculasController{
     }
 
     function Home(){
-        echo "Home";
-        $peliculas = $this->model->GetPeliculas();
-        $this->view->ShowHome($peliculas);
+        //echo "Home";
+        // $peliculas = $this->model->GetPeliculas();
+        // $generos = $this->model->GetGeneros();
+        // $this->view->ShowHome($peliculas, $generos);
+        $this->model->GetPeliculasConGenero();
+    }
+
+    function Generos(){
+        $Generos = $this->model->GetGeneros();
+        $this->view->ShowGeneros($Generos);
     }
 }

@@ -20,4 +20,18 @@ class peliculasModel{
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    function GetGeneros(){
+        $sentencia = $this->db->prepare("SELECT * FROM genero");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    function GetPeliculasConGenero(){
+        //$sentencia = $this->db->prepare("SELECT * FROM peliculas INNER JOIN genero ON peliculas.titulo = genero.nombre");
+        $sentencia = $this->db->prepare("SELECT peliculas.titulo, genero.nombre FROM peliculas INNER JOIN genero ON peliculas.id = peliculas.id_genero");
+        $sentencia->execute();
+        print_r( $sentencia->fetchAll(PDO::FETCH_OBJ));
+    }
+
 }
