@@ -12,21 +12,26 @@ class peliculasView{
        //$this->title = "Lista de Tareas";
     }
 
-    function ShowHome($peliculas, $generos){
+    function ShowHome($peliculasConGenero){
         $smarty = new Smarty();
         //$smarty->assign('titulo_s', $this->title);
-        $smarty->assign('peliculas_s', $peliculas);
-        $smarty->assign('generos_s', $generos);
+        $smarty->assign('peliculasConGenero_s', $peliculasConGenero);
         $smarty->display('templates/home.tpl'); // muestro el template 
     }
 
     function ShowHomeLocation(){
-        header("Location: ".BASE_URL."home");
+        header(BASE_URL);
     }
 
     function ShowGeneros($Generos){
         $smarty = new Smarty();
         $smarty->assign('generos_s', $Generos);
         $smarty->display('templates/generos.tpl');
+    }
+
+    function ShowItem($item){
+        $smarty = new Smarty();
+        $smarty->assign('item_s',$item);
+        $smarty->display('templates/item.tpl');
     }
 }

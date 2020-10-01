@@ -14,9 +14,16 @@ class peliculasModel{
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function GetPelicula($id_peliculas){
-        $sentencia = $this->db->prepare("SELECT * FROM peliculas WHERE id=?");
-        $sentencia->execute(array($id_peliculas));
+    function GetPelicula($titulo_pelicula){
+        $sentencia = $this->db->prepare("SELECT * FROM peliculas WHERE titulo=?");
+        $sentencia->execute(array($titulo_pelicula));
+        //print_r($sentencia->fetch(PDO::FETCH_OBJ)); 
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
+
+    function GetTask($id_task){
+        $sentencia = $this->db->prepare("SELECT * FROM task WHERE id=?");
+        $sentencia->execute(array($id_task));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
@@ -29,9 +36,10 @@ class peliculasModel{
 
     function GetPeliculasConGenero(){
         //$sentencia = $this->db->prepare("SELECT * FROM peliculas INNER JOIN genero ON peliculas.titulo = genero.nombre");
-        $sentencia = $this->db->prepare("SELECT peliculas.titulo, genero.nombre FROM peliculas INNER JOIN genero ON peliculas.id = peliculas.id_genero");
+        $sentencia = $this->db->prepare("SELECT peliculas.titulo, genero.nombre FROM peliculas INNER JOIN genero ON peliculas.id_genero = genero.id_genero");
         $sentencia->execute();
-        print_r( $sentencia->fetchAll(PDO::FETCH_OBJ));
+        //print_r( $sentencia->fetchAll(PDO::FETCH_OBJ));// vemos que este cargado y con que 
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
 }

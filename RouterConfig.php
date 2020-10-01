@@ -4,14 +4,14 @@
     require_once 'RouterClass.php';
     
     // CONSTANTES PARA RUTEO
-    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]));
 
     $r = new Router();
 
     // rutas
     $r->addRoute("home", "GET", "peliculasController", "Home");//el primer parametro es lo que tipeas en URL, la ultima es la funcion que llamas en "peliculasController"
     $r->addRoute("generos", "GET", "peliculasController", "Generos");//URL; METODO; clase; funcion a usar de la clase
-
+    $r->addRoute("visualizarItem/:TITULO","GET","peliculasController","VisualizarItem");
     // //Esto lo veo en TasksView
     // $r->addRoute("insert", "POST", "TasksController", "InsertTask");
 

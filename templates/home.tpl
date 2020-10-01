@@ -1,12 +1,12 @@
 {include file="header.tpl"}
 
-
-{foreach from=$peliculas_s item=pelicula}
+{foreach from=$peliculasConGenero_s item=peliculaConGenero}
     <div class="pelicula">
-                <ul>
-                    <li>Nombre: {$pelicula->titulo}</li>
-                    <li>Genero: {$pelicula->genero}</li>
-                </ul>
-            </div>
+        <ul>
+            <li>Nombre:<a href="visualizarItem/{$peliculaConGenero->titulo}"> {$peliculaConGenero->titulo} </a> </li>
+            <li>Genero:{$peliculaConGenero->nombre}</li>
+        </ul>
+    </div>
 {/foreach}            
+
 {include file="footer.tpl"}
