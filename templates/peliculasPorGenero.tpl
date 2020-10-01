@@ -4,11 +4,11 @@
 {foreach from=$peliculasPorGenero_s item=peliculaPorGenero}
     <div class="pelicula">
         <ul>
-            <li>Nombre:{$peliculaPorGenero->titulo}</li>
-            <li>Sinopsis:{$peliculaPorGenero->sinopsis}</li>
-            <li>Duracion:{$peliculaPorGenero->duracion}</li>
-            <li>Puntuacion:{$peliculaPorGenero->puntuacion}</li>
-            <li>Precio:{$peliculaPorGenero->precio} rupias</li>
+            <li>Nombre: {$peliculaPorGenero->titulo}</li>
+            <li>Sinopsis: {$peliculaPorGenero->sinopsis}</li>
+            <li>Duracion: {$peliculaPorGenero->duracion}</li>
+            <li>Puntuacion: {$peliculaPorGenero->puntuacion}/5</li>
+            <li>Precio: {$peliculaPorGenero->precio} rupias</li>
         </ul>
     </div>
 {/foreach}

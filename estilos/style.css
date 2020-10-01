@@ -320,6 +320,17 @@ a.social{
     width: 25%
 }
 /*Fin footer*/
+/*inicio de retoque*/
+a{
+    text-decoration: none;
+}
+
+li a{
+    color: black;
+}
+/*fin de retoque*/
+
+
 @media only screen and (min-width: 500px){
     header{
         height: 120px;
@@ -348,8 +359,9 @@ a.social{
         margin: 0;
     }
 
-    li a{
-        list-style: none;
+    ul.navigation li a{
+        /* list-style: none;
+        text-decoration: none; */
         margin: 0px 10px;
         color: white;
         text-transform: uppercase;
