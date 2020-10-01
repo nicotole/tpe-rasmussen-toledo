@@ -34,4 +34,11 @@ class peliculasView{
         $smarty->assign('item_s',$item);
         $smarty->display('templates/item.tpl');
     }
+
+    function ShowPeliculasPorGenero($peliculasPorGenero,$genero_nombre){
+        $smarty = new Smarty();
+        $smarty->assign('peliculasPorGenero_s',$peliculasPorGenero);
+        $smarty->assign('genero_s',$genero_nombre);
+        $smarty->display('templates/peliculasPorGenero.tpl');
+    }
 }

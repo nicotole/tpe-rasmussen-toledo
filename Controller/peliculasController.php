@@ -33,5 +33,11 @@ class peliculasController{
         $this->view->ShowItem($pelicula_completa);
     }
 
+    function VisualizarGenero($params = null){
+        $genero_nombre = $params[':GENERO'];
+        $peliculasPorGenero = $this->model->GetPeliculasPorGenero($genero_nombre);
+        $this->view->ShowPeliculasPorGenero($peliculasPorGenero, $genero_nombre); 
+    }
+
    
 }
